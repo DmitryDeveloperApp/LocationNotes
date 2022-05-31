@@ -8,6 +8,37 @@
 import UIKit
 import CoreData
 
+
+var folders: [Folder] {
+    let request = NSFetchRequest<Folder>(entityName: "Folder")
+    
+    let sd = NSSortDescriptor(key: "name", ascending: true)
+    request.sortDescriptors = [sd]
+    
+    let array = try? CoreDataManager.sharedInstance.managetObjectContext.fetch(request)
+    
+    if array != nil {
+        return array!
+    }
+    
+    return []
+}
+
+var notes: [Note] {
+    let request = NSFetchRequest<Note>(entityName: "Note")
+    
+    let sd = NSSortDescriptor(key: "dataUpdate", ascending: true)
+    request.sortDescriptors = [sd]
+    
+    let array = try? CoreDataManager.sharedInstance.managetObjectContext.fetch(request)
+    
+    if array != nil {
+        return array!
+    }
+    
+    return []
+}
+
 class CoreDataManager {
     
     // MARK: - Core Data stack

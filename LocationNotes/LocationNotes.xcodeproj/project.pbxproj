@@ -16,7 +16,7 @@
 		D505440C2844F82800BCE46A /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50544042844F82800BCE46A /* Note+CoreDataClass.swift */; };
 		D505440D2844F82800BCE46A /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50544052844F82800BCE46A /* Note+CoreDataProperties.swift */; };
 		D50544102844F94600BCE46A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D505440F2844F94600BCE46A /* CoreDataManager.swift */; };
-		D5054412284500A000BCE46A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5054411284500A000BCE46A /* ViewController.swift */; };
+		D50544142846369A00BCE46A /* FoldersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50544132846369A00BCE46A /* FoldersController.swift */; };
 		D5828F9628423691006ADE6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5828F9528423691006ADE6B /* AppDelegate.swift */; };
 		D5828F9D28423691006ADE6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5828F9B28423691006ADE6B /* Main.storyboard */; };
 		D5828FA028423691006ADE6B /* LocationNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5828F9E28423691006ADE6B /* LocationNotes.xcdatamodeld */; };
@@ -34,7 +34,7 @@
 		D50544042844F82800BCE46A /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D50544052844F82800BCE46A /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D505440F2844F94600BCE46A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		D5054411284500A000BCE46A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D50544132846369A00BCE46A /* FoldersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersController.swift; sourceTree = "<group>"; };
 		D5828F9228423691006ADE6B /* LocationNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5828F9528423691006ADE6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5828F9C28423691006ADE6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,11 +93,11 @@
 			children = (
 				D505440E2844F83C00BCE46A /* Models */,
 				D5828F9528423691006ADE6B /* AppDelegate.swift */,
+				D50544132846369A00BCE46A /* FoldersController.swift */,
 				D5828F9B28423691006ADE6B /* Main.storyboard */,
 				D5828FA128423695006ADE6B /* Assets.xcassets */,
 				D5828FA328423695006ADE6B /* LaunchScreen.storyboard */,
 				D5828FA628423695006ADE6B /* Info.plist */,
-				D5054411284500A000BCE46A /* ViewController.swift */,
 			);
 			path = LocationNotes;
 			sourceTree = "<group>";
@@ -175,11 +175,11 @@
 			files = (
 				D505440B2844F82800BCE46A /* Location+CoreDataProperties.swift in Sources */,
 				D505440A2844F82800BCE46A /* Location+CoreDataClass.swift in Sources */,
+				D50544142846369A00BCE46A /* FoldersController.swift in Sources */,
 				D50544082844F82800BCE46A /* ImageNote+CoreDataClass.swift in Sources */,
 				D5828FA028423691006ADE6B /* LocationNotes.xcdatamodeld in Sources */,
 				D50544072844F82800BCE46A /* Folder+CoreDataProperties.swift in Sources */,
 				D50544092844F82800BCE46A /* ImageNote+CoreDataProperties.swift in Sources */,
-				D5054412284500A000BCE46A /* ViewController.swift in Sources */,
 				D505440C2844F82800BCE46A /* Note+CoreDataClass.swift in Sources */,
 				D5828F9628423691006ADE6B /* AppDelegate.swift in Sources */,
 				D50544062844F82800BCE46A /* Folder+CoreDataClass.swift in Sources */,

@@ -18,4 +18,15 @@ public class Folder: NSManagedObject {
         folder.dataUpdate = Date()
         return folder
     }
+    
+    func addNote() -> Note {
+        let newNote = Note(context: CoreDataManager.sharedInstance.managetObjectContext)
+          
+        newNote.folder = self
+        newNote.dataUpdate = Date()
+        return newNote
+    }
+    
+    
+    
 }

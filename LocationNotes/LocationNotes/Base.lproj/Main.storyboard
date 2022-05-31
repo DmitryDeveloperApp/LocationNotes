@@ -90,13 +90,13 @@
         <!--Folders-->
         <scene sceneID="EOn-Qs-6yZ">
             <objects>
-                <tableViewController id="E4T-4v-70N" sceneMemberID="viewController">
+                <tableViewController id="E4T-4v-70N" customClass="FoldersController" customModule="LocationNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6fo-eb-P4Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="1M6-30-XqW" rowHeight="68" style="IBUITableViewCellStyleDefault" id="hSD-ys-du7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellFolder" textLabel="1M6-30-XqW" rowHeight="68" style="IBUITableViewCellStyleDefault" id="hSD-ys-du7">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hSD-ys-du7" id="WRH-pb-w3k">
@@ -120,7 +120,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Folders" id="Lbj-BJ-sId">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DSU-sF-BFr"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DSU-sF-BFr">
+                            <connections>
+                                <action selector="pushAddAction:" destination="E4T-4v-70N" id="CU2-Zf-OpJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="NMe-B9-xd3" kind="show" id="13P-JV-dko"/>
