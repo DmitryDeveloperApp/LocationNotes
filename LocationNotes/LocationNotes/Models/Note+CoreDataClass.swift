@@ -13,11 +13,15 @@ import UIKit
 @objc(Note)
 public class Note: NSManagedObject {
 
-    class func newNote(name: String) -> Note {
+    class func newNote(name: String, inFolder: Folder?) -> Note {
       let newNote = Note(context: CoreDataManager.sharedInstance.managetObjectContext)
         
         newNote.name = name
         newNote.dataUpdate = Date()
+        
+       // if let inFolder = inFolder {
+            newNote.folder = inFolder
+       // }
         
         return newNote
     }
@@ -37,5 +41,11 @@ public class Note: NSManagedObject {
         self.location = location
     }
     
+    var dateUpdateString: String {
+        let df = DateFormatter()
+        df.dateStyle = .medium
+        df.timeStyle = .short
+        return df.string(from: self.dataUpdate!)
+    }
     
 }

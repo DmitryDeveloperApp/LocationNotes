@@ -8,28 +8,51 @@
 import UIKit
 
 class NoteController: UITableViewController {
-
+    
+    
+    var note: Note?
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textName: UITextField!
+    @IBOutlet weak var textDescription: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        textName.text = note?.name
+        textDescription.text = note?.textDescription
+     
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        if textName.text == "" && textDescription.text == "" {
+            CoreDataManager.sharedInstance.managetObjectContext.delete(note!)
+            CoreDataManager.sharedInstance.saveContext()
+            return
+        }
+        
+        if note?.name != textName.text || note?.textDescription != textDescription.text {
+            note?.dataUpdate = Date()
+        }
+        
+        note?.name = textName.text
+        note?.textDescription = textDescription.text
+        
+        CoreDataManager.sharedInstance.saveContext()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

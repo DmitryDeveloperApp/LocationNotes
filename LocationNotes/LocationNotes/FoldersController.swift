@@ -15,6 +15,35 @@ class FoldersController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "goToFolder", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToFolder" {
+            let selectedFolder = folders[tableView.indexPathForSelectedRow!.row]
+            (segue.destination as! FolderController).folder = selectedFolder
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let folderInCell = folders[indexPath.row]
+            CoreDataManager.sharedInstance.managetObjectContext.delete(folderInCell)
+            
+            CoreDataManager.sharedInstance.saveContext()
+         // Delete the row
+            tableView.deleteRows(at: [indexPath], with: .left)
+        } else if editingStyle == .insert {
+            
+        }
+    }
+    
+    
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -47,6 +76,7 @@ class FoldersController: UITableViewController {
             let folderName = alertController.textFields?[0].text
             if folderName != "" {
                 _ = Folder.newFolder(name: folderName!)
+                CoreDataManager.sharedInstance.saveContext()
                 self.tableView.reloadData()
             }
         }

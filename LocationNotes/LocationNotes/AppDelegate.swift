@@ -20,17 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.rootViewController = ViewController()
 //        window?.makeKeyAndVisible()
     
-        print(CoreDataManager.sharedInstance.persistentContainer.persistentStoreDescriptions)
-         
-       
-        let nf = Folder.newFolder(name: "Aaaa")
-        nf.addNote().name = "New Note"
-        
-        CoreDataManager.sharedInstance.saveContext()
-        print(folders.count)
-        print(folders[0].name)
-
-        print(notes.count)
+//        print(CoreDataManager.sharedInstance.persistentContainer.persistentStoreDescriptions)
+//
+//
+//        let nf = Folder.newFolder(name: "Aaaa")
+//        nf.addNote().name = "New Note"
+//        nf.addNote().name = "New Note"
+//        nf.addNote().name = "New Note"
+//        nf.addNote().name = "New Note"
+//        nf.addNote().name = "New Note"
+//
+//        CoreDataManager.sharedInstance.saveContext()
+//        print(folders.count)
+//        print(folders[0].name)
+//
+//        print(notes.count)
         
         return true
     }

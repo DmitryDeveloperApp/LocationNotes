@@ -8,38 +8,75 @@
 import UIKit
 
 class FolderController: UITableViewController {
-
+    
+    var folder: Folder?
+    var notesActual: [Note]{
+        if let folder = folder {
+            return folder.notesSorted
+        }else {
+            return notes
+        }
+    }
+    
+    var selectedNote: Note?
+    @IBAction func pushAddAction(_ sender: Any) {
+        selectedNote = Note.newNote(name: "newName", inFolder: folder)
+        performSegue(withIdentifier: "goToNote", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToNote" {
+            (segue.destination as! NoteController).note = selectedNote
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if let folder = folder {
+            navigationItem.title = folder.name
+        } else {
+            navigationItem.title = "All notes"
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return notesActual.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellNote", for: indexPath)
 
+        let noteInCell = notesActual[indexPath.row]
+        cell.textLabel?.text = noteInCell.name
+        cell.detailTextLabel?.text = noteInCell.dateUpdateString
+        
         // Configure the cell...
+        
 
         return cell
     }
-    */
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let noteInCell = notesActual[indexPath.row]
+        selectedNote = noteInCell
+        performSegue(withIdentifier: "goToNote", sender: self)
+    }
 
     /*
     // Override to support conditional editing of the table view.
