@@ -1,48 +1,20 @@
 //
-//  FolderController.swift
+//  SelectFolderController.swift
 //  LocationNotes
 //
-//  Created by Dmitry Suprun on 01.06.2022.
+//  Created by Dmitry Suprun on 02.06.2022.
 //
 
 import UIKit
 
-class FolderController: UITableViewController {
+class SelectFolderController: UITableViewController {
     
-    var folder: Folder?
-    var notesActual: [Note]{
-        if let folder = folder {
-            return folder.notesSorted
-        }else {
-            return notes
-        }
-    }
-    
-    var selectedNote: Note?
-    @IBAction func pushAddAction(_ sender: Any) {
-        selectedNote = Note.newNote(name: "newName", inFolder: folder)
-        performSegue(withIdentifier: "goToNote", sender: self)
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToNote" {
-            (segue.destination as! NoteController).note = selectedNote
-        }
-    }
-    
-    
+    var note: Note?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let folder = folder {
-            navigationItem.title = folder.name
-        } else {
-            navigationItem.title = "All notes"
-        }
-        
-    }
     
-    override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -54,32 +26,46 @@ class FolderController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return notesActual.count
+        return folders.count + 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellNote", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Configure the cell...
-        let noteInCell = notesActual[indexPath.row]
-        cell.textLabel?.text = noteInCell.name
-        cell.detailTextLabel?.text = noteInCell.dateUpdateString
         
-        if noteInCell.imageSmall != nil {
-            cell.imageView?.image = UIImage(data: noteInCell.imageSmall!)
+        if indexPath.row == 0 {
+            cell.textLabel?.text = "-"
+            if note?.folder == nil {
+                cell.accessoryType = .checkmark
+            }else {
+                cell.accessoryType = .none
+            }
         } else {
-            cell.imageView?.image = nil
+            let folder = folders[indexPath.row-1]
+            cell.textLabel?.text = folder.name
+            if folder == note?.folder {
+                cell.accessoryType = .checkmark
+            } else {
+                cell.accessoryType = .none
+            }
         }
-        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let noteInCell = notesActual[indexPath.row]
-        selectedNote = noteInCell
-        performSegue(withIdentifier: "goToNote", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 0 {
+            note?.folder = nil
+        } else {
+            let folder = folders[indexPath.row-1]
+            note?.folder = folder
+            
+        }
+        tableView.reloadData()
     }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -89,19 +75,17 @@ class FolderController: UITableViewController {
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            CoreDataManager.sharedInstance.managetObjectContext.delete(notesActual[indexPath.row])
-            CoreDataManager.sharedInstance.saveContext()
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    
+    */
 
     /*
     // Override to support rearranging the table view.

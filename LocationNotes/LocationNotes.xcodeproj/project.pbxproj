@@ -24,6 +24,7 @@
 		D5828FA028423691006ADE6B /* LocationNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5828F9E28423691006ADE6B /* LocationNotes.xcdatamodeld */; };
 		D5828FA228423695006ADE6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5828FA128423695006ADE6B /* Assets.xcassets */; };
 		D5828FA528423695006ADE6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5828FA328423695006ADE6B /* LaunchScreen.storyboard */; };
+		D5C8B01B2848C32A00DE91BF /* SelectFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8B01A2848C32A00DE91BF /* SelectFolderController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		D5828FA128423695006ADE6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5828FA428423695006ADE6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5828FA628423695006ADE6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5C8B01A2848C32A00DE91BF /* SelectFolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFolderController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				D50544132846369A00BCE46A /* FoldersController.swift */,
 				D505441528476FB900BCE46A /* FolderController.swift */,
 				D50544172847789500BCE46A /* NoteController.swift */,
+				D5C8B01A2848C32A00DE91BF /* SelectFolderController.swift */,
 				D5828F9B28423691006ADE6B /* Main.storyboard */,
 				D5828FA128423695006ADE6B /* Assets.xcassets */,
 				D5828FA328423695006ADE6B /* LaunchScreen.storyboard */,
@@ -190,6 +193,7 @@
 				D505440C2844F82800BCE46A /* Note+CoreDataClass.swift in Sources */,
 				D5828F9628423691006ADE6B /* AppDelegate.swift in Sources */,
 				D50544062844F82800BCE46A /* Folder+CoreDataClass.swift in Sources */,
+				D5C8B01B2848C32A00DE91BF /* SelectFolderController.swift in Sources */,
 				D50544182847789500BCE46A /* NoteController.swift in Sources */,
 				D505440D2844F82800BCE46A /* Note+CoreDataProperties.swift in Sources */,
 				D50544102844F94600BCE46A /* CoreDataManager.swift in Sources */,
@@ -344,6 +348,8 @@
 				DEVELOPMENT_TEAM = X2T7B5F9X4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationNotes/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Can I use camera?";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Can I use photo?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -372,6 +378,8 @@
 				DEVELOPMENT_TEAM = X2T7B5F9X4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationNotes/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Can I use camera?";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Can I use photo?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

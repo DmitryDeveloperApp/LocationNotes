@@ -11,9 +11,12 @@ class FoldersController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -61,6 +64,8 @@ class FoldersController: UITableViewController {
         let folderInCell = folders[indexPath.row]
         
         cell.textLabel?.text = folderInCell.name
+        cell.detailTextLabel?.text = "\(folderInCell.notes!.count) item(-s)"
+        
         
         return cell
     }
@@ -75,7 +80,7 @@ class FoldersController: UITableViewController {
         let alertActionAdd = UIAlertAction(title: "Create", style: UIAlertAction.Style.default) { (alert) in
             let folderName = alertController.textFields?[0].text
             if folderName != "" {
-                _ = Folder.newFolder(name: folderName!)
+                _ = Folder.newFolder(name: folderName!.uppercased())
                 CoreDataManager.sharedInstance.saveContext()
                 self.tableView.reloadData()
             }
