@@ -30,6 +30,7 @@ class NoteController: UITableViewController {
      
     }
     
+   
     override func viewWillAppear(_ animated: Bool) {
         if let folder = note?.folder {
             labelFolderName.text = folder.name
@@ -174,6 +175,10 @@ class NoteController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSelectFolder" {
             (segue.destination as! SelectFolderController).note = note
+        }
+        
+        if segue.identifier == "goToMap" {
+            (segue.destination as! NoteMapController).note = note
         }
     }
     

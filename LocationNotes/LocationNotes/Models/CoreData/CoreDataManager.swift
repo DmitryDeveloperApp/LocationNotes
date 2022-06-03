@@ -20,7 +20,6 @@ var folders: [Folder] {
     if array != nil {
         return array!
     }
-    
     return []
 }
 

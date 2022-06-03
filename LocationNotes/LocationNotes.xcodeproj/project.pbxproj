@@ -25,6 +25,9 @@
 		D5828FA228423695006ADE6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5828FA128423695006ADE6B /* Assets.xcassets */; };
 		D5828FA528423695006ADE6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5828FA328423695006ADE6B /* LaunchScreen.storyboard */; };
 		D5C8B01B2848C32A00DE91BF /* SelectFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8B01A2848C32A00DE91BF /* SelectFolderController.swift */; };
+		D5C8B01F284A055100DE91BF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8B01E284A055100DE91BF /* LocationManager.swift */; };
+		D5C8B021284A165700DE91BF /* NoteMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8B020284A165700DE91BF /* NoteMapController.swift */; };
+		D5C8B023284A1F4400DE91BF /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8B022284A1F4400DE91BF /* MapController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		D5828FA428423695006ADE6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5828FA628423695006ADE6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5C8B01A2848C32A00DE91BF /* SelectFolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFolderController.swift; sourceTree = "<group>"; };
+		D5C8B01E284A055100DE91BF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D5C8B020284A165700DE91BF /* NoteMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMapController.swift; sourceTree = "<group>"; };
+		D5C8B022284A1F4400DE91BF /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,16 +70,8 @@
 		D505440E2844F83C00BCE46A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D505440F2844F94600BCE46A /* CoreDataManager.swift */,
-				D5828F9E28423691006ADE6B /* LocationNotes.xcdatamodeld */,
-				D50543FE2844F82800BCE46A /* Folder+CoreDataClass.swift */,
-				D50543FF2844F82800BCE46A /* Folder+CoreDataProperties.swift */,
-				D50544002844F82800BCE46A /* ImageNote+CoreDataClass.swift */,
-				D50544012844F82800BCE46A /* ImageNote+CoreDataProperties.swift */,
-				D50544022844F82800BCE46A /* Location+CoreDataClass.swift */,
-				D50544032844F82800BCE46A /* Location+CoreDataProperties.swift */,
-				D50544042844F82800BCE46A /* Note+CoreDataClass.swift */,
-				D50544052844F82800BCE46A /* Note+CoreDataProperties.swift */,
+				D5C8B01E284A055100DE91BF /* LocationManager.swift */,
+				D5C8B01D284A051400DE91BF /* CoreData */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,12 +101,31 @@
 				D505441528476FB900BCE46A /* FolderController.swift */,
 				D50544172847789500BCE46A /* NoteController.swift */,
 				D5C8B01A2848C32A00DE91BF /* SelectFolderController.swift */,
+				D5C8B020284A165700DE91BF /* NoteMapController.swift */,
+				D5C8B022284A1F4400DE91BF /* MapController.swift */,
 				D5828F9B28423691006ADE6B /* Main.storyboard */,
 				D5828FA128423695006ADE6B /* Assets.xcassets */,
 				D5828FA328423695006ADE6B /* LaunchScreen.storyboard */,
 				D5828FA628423695006ADE6B /* Info.plist */,
 			);
 			path = LocationNotes;
+			sourceTree = "<group>";
+		};
+		D5C8B01D284A051400DE91BF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D505440F2844F94600BCE46A /* CoreDataManager.swift */,
+				D5828F9E28423691006ADE6B /* LocationNotes.xcdatamodeld */,
+				D50543FE2844F82800BCE46A /* Folder+CoreDataClass.swift */,
+				D50543FF2844F82800BCE46A /* Folder+CoreDataProperties.swift */,
+				D50544002844F82800BCE46A /* ImageNote+CoreDataClass.swift */,
+				D50544012844F82800BCE46A /* ImageNote+CoreDataProperties.swift */,
+				D50544022844F82800BCE46A /* Location+CoreDataClass.swift */,
+				D50544032844F82800BCE46A /* Location+CoreDataProperties.swift */,
+				D50544042844F82800BCE46A /* Note+CoreDataClass.swift */,
+				D50544052844F82800BCE46A /* Note+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,9 +200,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D505440B2844F82800BCE46A /* Location+CoreDataProperties.swift in Sources */,
+				D5C8B021284A165700DE91BF /* NoteMapController.swift in Sources */,
 				D505440A2844F82800BCE46A /* Location+CoreDataClass.swift in Sources */,
 				D50544142846369A00BCE46A /* FoldersController.swift in Sources */,
 				D505441628476FB900BCE46A /* FolderController.swift in Sources */,
+				D5C8B01F284A055100DE91BF /* LocationManager.swift in Sources */,
 				D50544082844F82800BCE46A /* ImageNote+CoreDataClass.swift in Sources */,
 				D5828FA028423691006ADE6B /* LocationNotes.xcdatamodeld in Sources */,
 				D50544072844F82800BCE46A /* Folder+CoreDataProperties.swift in Sources */,
@@ -196,6 +215,7 @@
 				D5C8B01B2848C32A00DE91BF /* SelectFolderController.swift in Sources */,
 				D50544182847789500BCE46A /* NoteController.swift in Sources */,
 				D505440D2844F82800BCE46A /* Note+CoreDataProperties.swift in Sources */,
+				D5C8B023284A1F4400DE91BF /* MapController.swift in Sources */,
 				D50544102844F94600BCE46A /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,12 +369,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationNotes/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Can I use camera?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = location;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Can I use photo?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,12 +401,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationNotes/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Can I use camera?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = location;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Can I use photo?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

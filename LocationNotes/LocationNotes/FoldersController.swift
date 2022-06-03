@@ -11,10 +11,11 @@ class FoldersController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        LocationManager.sharedInstance.requestAuthorization()
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.tableView.reloadData()
     }
     // MARK: - Table view data source
@@ -65,7 +66,6 @@ class FoldersController: UITableViewController {
         
         cell.textLabel?.text = folderInCell.name
         cell.detailTextLabel?.text = "\(folderInCell.notes!.count) item(-s)"
-        
         
         return cell
     }
