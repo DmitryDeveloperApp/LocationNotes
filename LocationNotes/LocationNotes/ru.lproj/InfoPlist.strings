@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  LocationNotes
+
+  Created by Dmitry Suprun on 07.06.2022.
+  
+*/
+
+CFBundleName = "Заметки";
+NSLocationWhenInUseUsageDescription = "Приложение хочет использовать локацию, когда вы им пользуетесь";
+NSPhotoLibraryUsageDescription = "Нужно воспользоваться фотобиблиотекой";

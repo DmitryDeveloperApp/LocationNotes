@@ -72,9 +72,9 @@ class FoldersController: UITableViewController {
     
     @IBAction func pushAddAction(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "Create new folder", message: "", preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController(title: "Create new folder".localize(), message: "", preferredStyle: UIAlertController.Style.alert)
         alertController.addTextField { (text) in
-            text.placeholder = "Folder name"
+            text.placeholder = "Folder name".localize()
         }
         
         let alertActionAdd = UIAlertAction(title: "Create", style: UIAlertAction.Style.default) { (alert) in

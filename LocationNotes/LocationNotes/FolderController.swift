@@ -18,8 +18,16 @@ class FolderController: UITableViewController {
         }
     }
     
+    var buyingForm = BuingForm()
+    
     var selectedNote: Note?
     @IBAction func pushAddAction(_ sender: Any) {
+        
+        if buyingForm.isNeedToShow {
+            buyingForm.showForm(inController: self)
+            return
+        }
+        
         selectedNote = Note.newNote(name: "newName", inFolder: folder)
         selectedNote?.addCurrentLocation()
         
@@ -31,6 +39,7 @@ class FolderController: UITableViewController {
         }
     }
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +47,10 @@ class FolderController: UITableViewController {
         if let folder = folder {
             navigationItem.title = folder.name
         } else {
-            navigationItem.title = "All notes"
+            navigationItem.title = "All notes".localize()
         }
+        
+    
         
     }
     
