@@ -19,6 +19,8 @@
 		D50544142846369A00BCE46A /* FoldersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50544132846369A00BCE46A /* FoldersController.swift */; };
 		D505441628476FB900BCE46A /* FolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D505441528476FB900BCE46A /* FolderController.swift */; };
 		D50544182847789500BCE46A /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50544172847789500BCE46A /* NoteController.swift */; };
+		D549D1A92851CEE800503C3D /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D549D1A82851CEE800503C3D /* NoteCell.swift */; };
+		D549D1AD2851E94C00503C3D /* noteImage.png in Resources */ = {isa = PBXBuildFile; fileRef = D549D1AC2851E94C00503C3D /* noteImage.png */; };
 		D5828F9628423691006ADE6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5828F9528423691006ADE6B /* AppDelegate.swift */; };
 		D5828F9D28423691006ADE6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5828F9B28423691006ADE6B /* Main.storyboard */; };
 		D5828FA028423691006ADE6B /* LocationNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5828F9E28423691006ADE6B /* LocationNotes.xcdatamodeld */; };
@@ -48,6 +50,8 @@
 		D50544132846369A00BCE46A /* FoldersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersController.swift; sourceTree = "<group>"; };
 		D505441528476FB900BCE46A /* FolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderController.swift; sourceTree = "<group>"; };
 		D50544172847789500BCE46A /* NoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
+		D549D1A82851CEE800503C3D /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		D549D1AC2851E94C00503C3D /* noteImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noteImage.png; sourceTree = "<group>"; };
 		D5828F9228423691006ADE6B /* LocationNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5828F9528423691006ADE6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5828F9C28423691006ADE6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				D5828F9528423691006ADE6B /* AppDelegate.swift */,
 				D50544132846369A00BCE46A /* FoldersController.swift */,
 				D505441528476FB900BCE46A /* FolderController.swift */,
+				D549D1A82851CEE800503C3D /* NoteCell.swift */,
 				D50544172847789500BCE46A /* NoteController.swift */,
 				D5C8B01A2848C32A00DE91BF /* SelectFolderController.swift */,
 				D5C8B020284A165700DE91BF /* NoteMapController.swift */,
@@ -125,6 +130,7 @@
 				D5828FA628423695006ADE6B /* Info.plist */,
 				D5F90655284F57AD00EDCF10 /* InfoPlist.strings */,
 				D5F9064F284F546B00EDCF10 /* Localizable.strings */,
+				D549D1AC2851E94C00503C3D /* noteImage.png */,
 			);
 			path = LocationNotes;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 				D5828FA228423695006ADE6B /* Assets.xcassets in Resources */,
 				D5828F9D28423691006ADE6B /* Main.storyboard in Resources */,
 				D5F90657284F57AD00EDCF10 /* InfoPlist.strings in Resources */,
+				D549D1AD2851E94C00503C3D /* noteImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +240,7 @@
 				D50544092844F82800BCE46A /* ImageNote+CoreDataProperties.swift in Sources */,
 				D505440C2844F82800BCE46A /* Note+CoreDataClass.swift in Sources */,
 				D5828F9628423691006ADE6B /* AppDelegate.swift in Sources */,
+				D549D1A92851CEE800503C3D /* NoteCell.swift in Sources */,
 				D50544062844F82800BCE46A /* Folder+CoreDataClass.swift in Sources */,
 				D5C8B01B2848C32A00DE91BF /* SelectFolderController.swift in Sources */,
 				D50544182847789500BCE46A /* NoteController.swift in Sources */,

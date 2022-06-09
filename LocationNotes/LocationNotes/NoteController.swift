@@ -25,6 +25,8 @@ class NoteController: UITableViewController {
         textName.text = note?.name
         textDescription.text = note?.textDescription
         imageView.image = note?.imageActual
+        imageView.layer.cornerRadius = imageView.frame.width / 2
+        imageView.layer.masksToBounds = true
         
         navigationItem.title = note?.name
      
@@ -38,6 +40,23 @@ class NoteController: UITableViewController {
             labelFolderName.text = "-"
         }
     }
+    
+    @IBAction func pushShareAction(_ sender: Any) {
+        
+        var activities: [Any] = []
+        
+        if let image = note?.imageActual {
+            activities.append(image)
+        }
+        activities.append(note?.name ?? "")
+        activities.append(note?.textDescription ?? "")
+        
+        let activityController = UIActivityViewController(activityItems: activities, applicationActivities: nil)
+        present(activityController, animated: true, completion: nil)
+    }
+    
+    
+    
 
     @IBAction func pushDoneAction(_ sender: Any) {
         saveNote()

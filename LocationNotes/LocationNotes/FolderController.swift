@@ -72,18 +72,12 @@ class FolderController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellNote", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellNote", for: indexPath) as! NoteCell
 
         // Configure the cell...
         let noteInCell = notesActual[indexPath.row]
-        cell.textLabel?.text = noteInCell.name
-        cell.detailTextLabel?.text = noteInCell.dateUpdateString
         
-        if noteInCell.imageSmall != nil {
-            cell.imageView?.image = UIImage(data: noteInCell.imageSmall!)
-        } else {
-            cell.imageView?.image = nil
-        }
+        cell.initCell(note: noteInCell)
         
         return cell
     }
